@@ -4,7 +4,11 @@ GAME_RULES = "What number is missing in the progression?"
 PROGRESSION_LENGTH = 10
 
 
-def generate_progression(start: int, step: int, hidden_index: int) -> tuple[str, str]:
+def generate_progression(
+    start: int,
+    step: int,
+    hidden_index: int,
+) -> tuple[str, str]:
     numbers = [start + i * step for i in range(PROGRESSION_LENGTH)]
     missing = numbers[hidden_index]
     numbers[hidden_index] = ".."
