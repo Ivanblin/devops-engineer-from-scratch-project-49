@@ -1,4 +1,4 @@
-import random
+from brain_games.game_utils import get_random_int
 
 GAME_RULES = "Find the greatest common divisor of given numbers."
 
@@ -10,8 +10,8 @@ def get_gcd(num1: int, num2: int) -> int:
 
 
 def generate_round() -> tuple[str, str]:
-    num1 = random.randint(0, 100)
-    num2 = random.randint(0, 100)
+    num1 = get_random_int()
+    num2 = get_random_int()
     question = f"{num1} {num2}"
     correct_answer = str(get_gcd(num1, num2))
     return question, correct_answer

@@ -1,5 +1,7 @@
 import random
 
+from brain_games.game_utils import get_random_int
+
 GAME_RULES = "What is the result of the expression?"
 
 
@@ -15,8 +17,8 @@ def calculate(num1: int, num2: int, operator: str) -> int:
 
 
 def generate_round() -> tuple[str, str]:
-    num1 = random.randint(0, 100)
-    num2 = random.randint(0, 100)
+    num1 = get_random_int()
+    num2 = get_random_int()
     operator = random.choice(["+", "-", "*"])
     question = f"{num1} {operator} {num2}"
     correct_answer = str(calculate(num1, num2, operator))

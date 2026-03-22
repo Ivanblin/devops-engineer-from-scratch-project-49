@@ -13,7 +13,19 @@ brain-calc:
 brain-gcd:
 	uv run brain-gcd
 
+brain-progression:
+	uv run brain-progression
+
+brain-prime:
+	uv run brain-prime
+
 lint:
 	uv run ruff check brain_games
 
-.PHONY: install brain-games brain-even brain-calc brain-gcd lint
+build:
+	uv build
+
+publish:
+	uv build && uv publish --dry-run
+
+.PHONY: install brain-games brain-even brain-calc brain-gcd brain-progression brain-prime lint build publish
